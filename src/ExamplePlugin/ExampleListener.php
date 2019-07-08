@@ -35,7 +35,8 @@ use pocketmine\level\Position;
 use pocketmine\math\Vector3;
 use pocketmine\item\Item;
 use pocketmine\item\Arrow;
-
+use pocketmine\plugin\PluginBase;
+use pocketmine\utils\TextFormat;
 
 class ExampleListener implements Listener{
 
