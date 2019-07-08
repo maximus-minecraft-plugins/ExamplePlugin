@@ -27,13 +27,14 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\entity\ProjectileHitBlockEvent;
-
-
+use pocketmine\level\particle\FlameParticle;
+use pocketmine\math\Vector3;
 
 class ExampleListener implements Listener{
 
 	/** @var MainClass */
 	private $plugin;
+	
 
 	public function __construct(MainClass $plugin){
 		$this->plugin = $plugin;
@@ -90,8 +91,15 @@ class ExampleListener implements Listener{
 		$this->plugin->getServer()->broadcastMessage($theBlock->getName() . " was hit!");
 
 
-		$event->getEntity()->setOnFire(60);
+		$entityHit = $event->getEntity();
+
+
+		$level = $this->plugin->getServer()->getLevelByName("world");
 		
+		
+		$level->addParticle(new FlameParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
+
+
 	}
 
 
