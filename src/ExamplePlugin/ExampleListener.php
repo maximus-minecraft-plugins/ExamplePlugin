@@ -29,7 +29,7 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\entity\ProjectileHitEntityEvent;
 use pocketmine\event\entity\ProjectileHitBlockEvent;
 use pocketmine\level\particle\ExplodeParticle;
-use pocketmine\level\level\Explosion;
+use pocketmine\level\Explosion;
 use pocketmine\math\Vector3;
 
 class ExampleListener implements Listener{
