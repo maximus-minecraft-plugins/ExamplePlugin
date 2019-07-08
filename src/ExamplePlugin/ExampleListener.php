@@ -123,13 +123,11 @@ class ExampleListener implements Listener{
 		
 		$blockHit =  $event->getBlockHit();
 
-		if (262 == $blockHit->getId()) {
-			$level = $this->plugin->getServer()->getLevelByName("world");
+		$level = $this->plugin->getServer()->getLevelByName("world");
 
-			$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 5, $blockHit); 
-			$explosion->explodeA();
-			$explosion->explodeB();
-		}
+		$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 5, $blockHit); 
+		$explosion->explodeA();
+		$explosion->explodeB();
 
 		
 		
