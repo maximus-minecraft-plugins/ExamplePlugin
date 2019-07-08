@@ -57,7 +57,13 @@ class ExampleListener implements Listener{
 
 		$playerName = $event->getPlayer()->getDisplayName();
 
-		$this->plugin->getServer()->broadcastMessage($playerName . " has just joined!");
+
+		if ($playerName == "marlonjava") {
+			$this->plugin->getServer()->broadcastTitle($playerName . " the God, has just joined!");
+		} else {
+			$this->plugin->getServer()->broadcastMessage($playerName . " has just joined!");
+		}
+		
 		
 	}
 
