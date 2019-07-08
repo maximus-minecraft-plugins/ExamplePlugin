@@ -90,7 +90,7 @@ class ExampleListener implements Listener{
 		$this->plugin->getServer()->broadcastMessage($theBlock->getName() . " was hit!");
 
 
-		$theBlock->setOnFire(60);
+		$theBlock->getEntity()->setOnFire(60);
 		
 	}
 
