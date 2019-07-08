@@ -44,4 +44,22 @@ class ExampleListener implements Listener{
 	public function onSpawn(PlayerRespawnEvent $event) : void{
 		$this->plugin->getServer()->broadcastMessage($event->getPlayer()->getDisplayName() . " has just spawned!");
 	}
+
+
+	/**
+	 * @param PlayerJoinEvent $event
+	 *
+	 * @priority        NORMAL
+	 * @ignoreCancelled false
+	 */
+	public function onJoin(PlayerJoinEvent $event) : void{
+		$this->plugin->getServer()->broadcastMessage($event->getPlayer()->getDisplayName() . " has just joined!");
+	}
+
+
+
+	
+
+
+
 }

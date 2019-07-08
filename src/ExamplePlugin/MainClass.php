@@ -11,8 +11,13 @@ use pocketmine\utils\TextFormat;
 
 class MainClass extends PluginBase{
 
+	private $server;
+
+
 	public function onLoad() : void{
 		$this->getLogger()->info(TextFormat::WHITE . "I've been loaded!");
+
+		
 	}
 
 	public function onEnable() : void{
@@ -35,4 +40,6 @@ class MainClass extends PluginBase{
 				return false;
 		}
 	}
+
+	
 }
