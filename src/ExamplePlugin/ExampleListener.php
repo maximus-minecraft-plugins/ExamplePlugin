@@ -121,7 +121,7 @@ class ExampleListener implements Listener{
 	public function onBlockHit(ProjectileHitBlockEvent $event) : void{
 
 		// $this->plugin->getServer()->broadcastMessage("onBlockHit");
-		$entitySrc =  $event->getEntity();
+		$entitySrc =  $event->getEntity()->getEntity();
 		$blockHit =  $event->getBlockHit();
 
 		$level = $this->plugin->getServer()->getLevelByName("world");
