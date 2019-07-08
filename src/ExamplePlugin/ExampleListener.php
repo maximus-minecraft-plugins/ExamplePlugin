@@ -32,6 +32,7 @@ use pocketmine\level\particle\ExplodeParticle;
 use pocketmine\level\Explosion;
 use pocketmine\level\Position;
 use pocketmine\math\Vector3;
+use pocketmine\item\Item;
 
 class ExampleListener implements Listener{
 
