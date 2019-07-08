@@ -120,14 +120,17 @@ class ExampleListener implements Listener{
 	public function onBlockHit(ProjectileHitBlockEvent $event) : void{
 
 		// $this->plugin->getServer()->broadcastMessage("onBlockHit");
-		
+		$entitySrc =  $event->getEntity();
 		$blockHit =  $event->getBlockHit();
 
 		$level = $this->plugin->getServer()->getLevelByName("world");
 
-		$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 5, $blockHit); 
-		$explosion->explodeA();
-		$explosion->explodeB();
+		if (262 == $entitySrc.getId()) {
+			$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 5, $blockHit); 
+			$explosion->explodeA();
+			$explosion->explodeB();
+		}
+		
 
 		
 		
