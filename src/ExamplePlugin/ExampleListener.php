@@ -128,6 +128,14 @@ class ExampleListener implements Listener{
 
 		$level = $this->plugin->getServer()->getLevelByName("world");
 
+
+
+		$this->getLogger()->info(TextFormat::DARK_RED . "  " . get_class($event->getEntity()));
+
+
+
+		
+
 		if ($event->getEntity() instanceof Arrow) {
 			$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 5, $blockHit); 
 			$explosion->explodeA();
