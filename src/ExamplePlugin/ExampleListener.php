@@ -64,6 +64,11 @@ class ExampleListener implements Listener{
 			$this->plugin->getServer()->broadcastMessage($playerName . " has just joined!");
 		}
 		
+
+		$event->getPlayer().setCanClimbWalls(true);
+		
+
+
 		
 	}
 
