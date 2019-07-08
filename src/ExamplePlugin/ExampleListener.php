@@ -117,7 +117,7 @@ class ExampleListener implements Listener{
 
 		$this->plugin->getServer()->broadcastMessage("onBlockHit");
 		
-		// $entityHit =  $event->getEntityHit();
+		$blockHit =  $event->getBlockHit();
 
 		
 		// $this->plugin->getServer()->broadcastMessage($entityHit->getNameTag() . " was hit!");
@@ -129,9 +129,9 @@ class ExampleListener implements Listener{
 		
 		// // $level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
 
-		// $explosion = new Explosion($this, 1000, $this); 
-		// $explosion->spawnTo($entityHit);
-		// $explosion->explodeA();
+		$explosion = new Explosion($this, 1000, $this); 
+		$explosion->spawnTo($blockHit);
+		$explosion->explodeA();
 
 	}
 	
