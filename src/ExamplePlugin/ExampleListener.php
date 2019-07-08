@@ -28,6 +28,7 @@ use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\entity\ProjectileHitEntityEvent;
 use pocketmine\event\entity\ProjectileHitBlockEvent;
+use pocketmine\event\entity\Projectile;
 use pocketmine\level\particle\ExplodeParticle;
 use pocketmine\level\Explosion;
 use pocketmine\level\Position;
