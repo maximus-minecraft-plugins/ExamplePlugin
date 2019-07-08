@@ -25,6 +25,7 @@ namespace ExamplePlugin;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerRespawnEvent;
+use pocketmine\event\player\PlayerJoinEvent;
 
 class ExampleListener implements Listener{
 
