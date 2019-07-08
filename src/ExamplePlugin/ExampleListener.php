@@ -26,7 +26,7 @@ namespace ExamplePlugin;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\event\player\PlayerJoinEvent;
-use pocketmine\event\entity\ProjectileHitBlockEvent;
+use pocketmine\event\entity\ProjectileHitEntityEvent;
 use pocketmine\level\particle\ExplodeParticle;
 use pocketmine\math\Vector3;
 
@@ -77,21 +77,21 @@ class ExampleListener implements Listener{
 	}
 
 	/**
-	 * @param ProjectileHitBlockEvent $event
+	 * @param ProjectileHitEntityEvent $event
 	 *
 	 * @priority        NORMAL
 	 * @ignoreCancelled false
 	 */
-	public function onBlockHit(ProjectileHitBlockEvent $event) : void{
+	public function onBlockHit(ProjectileHitEntityEvent $event) : void{
 
 		
-		$theBlock =  $event->getBlockHit();
+		$entityHit =  $event->getEntityHit();
 
 		
-		$this->plugin->getServer()->broadcastMessage($theBlock->getName() . " was hit!");
+		$this->plugin->getServer()->broadcastMessage($entityHit->getName() . " was hit!");
 
 
-		$entityHit = $event->getEntity();
+	
 
 
 		$level = $this->plugin->getServer()->getLevelByName("world");
