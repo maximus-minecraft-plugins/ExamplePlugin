@@ -1,0 +1,7 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/maximus-minecraft-plugins/ExamplePlugin
+branches:
+- master
+projects:
+  ExamplePlugin:
+    path: ""
+...
