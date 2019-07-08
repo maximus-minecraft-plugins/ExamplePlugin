@@ -131,11 +131,6 @@ class ExampleListener implements Listener{
 
 
 
-		$this->plugin->getLogger()->info(TextFormat::DARK_RED . "  " . get_class($event->getEntity()));
-
-		
-
-		
 
 		if ( get_class($event->getEntity()) == "pocketmine\\entity\\projectile\\Arrow") {
 			$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 5, $blockHit); 
