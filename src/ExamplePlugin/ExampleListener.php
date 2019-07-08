@@ -27,6 +27,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\entity\ProjectileHitEntityEvent;
+use pocketmine\event\entity\ProjectileHitBlockEvent;
 use pocketmine\level\particle\ExplodeParticle;
 use pocketmine\level\particle\Explosion;
 use pocketmine\math\Vector3;
@@ -83,28 +84,56 @@ class ExampleListener implements Listener{
 	 * @priority        NORMAL
 	 * @ignoreCancelled false
 	 */
-	public function onBlockHit(ProjectileHitEntityEvent $event) : void{
+	public function onEntityHit(ProjectileHitEntityEvent $event) : void{
+
+		$this->plugin->getServer()->broadcastMessage("onEntityHit");
+		
+		// $entityHit =  $event->getEntityHit();
 
 		
-		$entityHit =  $event->getEntityHit();
-
-		
-		$this->plugin->getServer()->broadcastMessage($entityHit->getNameTag() . " was hit!");
+		// $this->plugin->getServer()->broadcastMessage($entityHit->getNameTag() . " was hit!");
 
 
 	
-		// $level = $this->plugin->getServer()->getLevelByName("world");
+		// // $level = $this->plugin->getServer()->getLevelByName("world");
 		
 		
-		// $level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
+		// // $level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
 
-		$explosion = new Explosion($this, 1000, $this); 
-		$explosion->spawnTo($entityHit);
-		$explosion->explodeA();
+		// $explosion = new Explosion($this, 1000, $this); 
+		// $explosion->spawnTo($entityHit);
+		// $explosion->explodeA();
 
 	}
 
 
+	/**
+	 * @param ProjectileHitBlockEvent $event
+	 *
+	 * @priority        NORMAL
+	 * @ignoreCancelled false
+	 */
+	public function onBlockHit(ProjectileHitBlockEvent $event) : void{
+
+		$this->plugin->getServer()->broadcastMessage("onBlockHit");
+		
+		// $entityHit =  $event->getEntityHit();
+
+		
+		// $this->plugin->getServer()->broadcastMessage($entityHit->getNameTag() . " was hit!");
+
+
+	
+		// // $level = $this->plugin->getServer()->getLevelByName("world");
+		
+		
+		// // $level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
+
+		// $explosion = new Explosion($this, 1000, $this); 
+		// $explosion->spawnTo($entityHit);
+		// $explosion->explodeA();
+
+	}
 	
 
 	
