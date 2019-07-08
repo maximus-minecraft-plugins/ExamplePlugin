@@ -26,6 +26,9 @@ namespace ExamplePlugin;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\event\player\ProjectileHitBlockEvent;
+
+
 
 class ExampleListener implements Listener{
 
@@ -72,7 +75,27 @@ class ExampleListener implements Listener{
 		
 	}
 
+	/**
+	 * @param ProjectileHitBlockEvent $event
+	 *
+	 * @priority        NORMAL
+	 * @ignoreCancelled false
+	 */
+	public function onBlockHit(ProjectileHitBlockEvent $event) : void{
 
+		
+		$theBlock =  $event->getBlockHit();
+
+		
+		$this->plugin->getServer()->broadcastMessage($theBlock->getName() . " was hit!");
+
+
+		$theBlock->setDamage(15);
+		
+	}
+
+
+	
 
 	
 
