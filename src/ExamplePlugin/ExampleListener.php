@@ -120,20 +120,19 @@ class ExampleListener implements Listener{
 		
 		$blockHit =  $event->getBlockHit();
 
+		if (262 == $blockHit->getId()) {
+			$level = $this->plugin->getServer()->getLevelByName("world");
+
+			$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 5, $blockHit); 
+			$explosion->explodeA();
+			$explosion->explodeB();
+		}
+
 		
-		// $this->plugin->getServer()->broadcastMessage($entityHit->getNameTag() . " was hit!");
+		
 
 
-	
-		$level = $this->plugin->getServer()->getLevelByName("world");
 		
-		
-		// // $level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
-
-		$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 5, $blockHit); 
-		// $explosion->spawnTo($blockHit);
-		$explosion->explodeA();
-		$explosion->explodeB();
 
 	}
 	
