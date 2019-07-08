@@ -54,7 +54,11 @@ class ExampleListener implements Listener{
 	 * @ignoreCancelled false
 	 */
 	public function onJoin(PlayerJoinEvent $event) : void{
-		$this->plugin->getServer()->broadcastMessage($event->getPlayer()->getDisplayName() . " has just joined!");
+
+		$playerName = $event->getPlayer()->getDisplayName();
+
+		$this->plugin->getServer()->broadcastMessage($playerName . " has just joined!");
+		
 	}
 
 

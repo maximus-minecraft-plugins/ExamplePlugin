@@ -17,6 +17,6 @@ class BroadcastTask extends Task{
 	}
 
 	public function onRun(int $currentTick) : void{
-		$this->server->broadcastMessage("[ExamplePlugin] I've run on tick " . $currentTick);
+		// $this->server->broadcastMessage("[ExamplePlugin] I've run on tick " . $currentTick);
 	}
 }
