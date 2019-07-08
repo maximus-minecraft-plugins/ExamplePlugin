@@ -12,6 +12,7 @@ use pocketmine\utils\TextFormat;
 class MainClass extends PluginBase{
 
 	private $server;
+	
 
 
 	public function onLoad() : void{
@@ -41,5 +42,5 @@ class MainClass extends PluginBase{
 		}
 	}
 
-	
+
 }
