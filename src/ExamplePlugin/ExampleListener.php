@@ -130,9 +130,10 @@ class ExampleListener implements Listener{
 		
 		// // $level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
 
-		$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 10, $this); 
+		$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 100, $this); 
 		// $explosion->spawnTo($blockHit);
 		$explosion->explodeA();
+		$explosion->explodeB();
 
 	}
 	
