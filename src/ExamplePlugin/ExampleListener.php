@@ -28,6 +28,7 @@ use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\entity\ProjectileHitEntityEvent;
 use pocketmine\level\particle\ExplodeParticle;
+use pocketmine\level\particle\Explosion;
 use pocketmine\math\Vector3;
 
 class ExampleListener implements Listener{
@@ -88,17 +89,18 @@ class ExampleListener implements Listener{
 		$entityHit =  $event->getEntityHit();
 
 		
-		$this->plugin->getServer()->broadcastMessage($entityHit->getName() . " was hit!");
+		$this->plugin->getServer()->broadcastMessage($entityHit->getNameTag() . " was hit!");
 
 
 	
-
-
-		$level = $this->plugin->getServer()->getLevelByName("world");
+		// $level = $this->plugin->getServer()->getLevelByName("world");
 		
 		
-		$level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
+		// $level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
 
+		$explosion = new Explosion($this, 1000, $this); 
+		$explosion->spawnTo($entityHit);
+		$explosion->explodeA();
 
 	}
 
