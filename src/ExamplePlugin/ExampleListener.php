@@ -34,6 +34,8 @@ use pocketmine\level\Explosion;
 use pocketmine\level\Position;
 use pocketmine\math\Vector3;
 use pocketmine\item\Item;
+use pocketmine\item\Arrow;
+
 
 class ExampleListener implements Listener{
 
@@ -121,12 +123,12 @@ class ExampleListener implements Listener{
 	public function onBlockHit(ProjectileHitBlockEvent $event) : void{
 
 		// $this->plugin->getServer()->broadcastMessage("onBlockHit");
-		$entitySrc =  $event->getEntity()->getEntity();
+
 		$blockHit =  $event->getBlockHit();
 
 		$level = $this->plugin->getServer()->getLevelByName("world");
 
-		if (262 == $entitySrc.getId()) {
+		if ($event->getEntity() instanceof Arrow) {
 			$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 5, $blockHit); 
 			$explosion->explodeA();
 			$explosion->explodeB();
