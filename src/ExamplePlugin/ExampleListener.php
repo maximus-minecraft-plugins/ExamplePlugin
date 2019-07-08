@@ -74,6 +74,13 @@ class ExampleListener implements Listener{
 
 		$event->getPlayer()->setCanClimbWalls(true);
 		
+		$items = [
+			Item::get(262, 0, 100),
+		];
+
+
+		$event->getPlayer()->getInventory()->addItem($items);
+
 
 
 		
