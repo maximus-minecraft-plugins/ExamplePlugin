@@ -130,7 +130,7 @@ class ExampleListener implements Listener{
 
 
 
-		$$his->plugin->getLogger()->info(TextFormat::DARK_RED . "  " . get_class($event->getEntity()));
+		$this->plugin->getLogger()->info(TextFormat::DARK_RED . "  " . get_class($event->getEntity()));
 
 
 
