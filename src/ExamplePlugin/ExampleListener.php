@@ -27,7 +27,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\entity\ProjectileHitBlockEvent;
-use pocketmine\level\particle\FlameParticle;
+use pocketmine\level\particle\ExplodeParticle;
 use pocketmine\math\Vector3;
 
 class ExampleListener implements Listener{
@@ -97,7 +97,7 @@ class ExampleListener implements Listener{
 		$level = $this->plugin->getServer()->getLevelByName("world");
 		
 		
-		$level->addParticle(new FlameParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
+		$level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
 
 
 	}
