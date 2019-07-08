@@ -65,7 +65,7 @@ class ExampleListener implements Listener{
 		}
 		
 
-		$event->getPlayer().setCanClimbWalls(true);
+		$event->getPlayer()->setCanClimbWalls(true);
 		
 
 
