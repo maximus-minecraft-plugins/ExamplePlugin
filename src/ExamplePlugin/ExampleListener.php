@@ -30,6 +30,7 @@ use pocketmine\event\entity\ProjectileHitEntityEvent;
 use pocketmine\event\entity\ProjectileHitBlockEvent;
 use pocketmine\level\particle\ExplodeParticle;
 use pocketmine\level\Explosion;
+use pocketmine\level\Position;
 use pocketmine\math\Vector3;
 
 class ExampleListener implements Listener{
@@ -124,12 +125,12 @@ class ExampleListener implements Listener{
 
 
 	
-		// // $level = $this->plugin->getServer()->getLevelByName("world");
+		$level = $this->plugin->getServer()->getLevelByName("world");
 		
 		
 		// // $level->addParticle(new ExplodeParticle(new Vector3($entityHit->x, $entityHit->y, $entityHit->z)));
 
-		$explosion = new Explosion($this, 1000, $this); 
+		$explosion = new Explosion(new Position($blockHit->x, $blockHit->y, $blockHit->z, $level), 1000, $this); 
 		$explosion->spawnTo($blockHit);
 		$explosion->explodeA();
 
