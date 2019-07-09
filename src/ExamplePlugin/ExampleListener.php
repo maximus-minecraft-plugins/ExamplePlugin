@@ -152,8 +152,9 @@ class ExampleListener implements Listener{
 	 */
 	public function onCommand(CommandEvent $event) : void{
 
+		$player =  $this->plugin->getServer()->getPlayer($event->getSender()->getName());
 		
-		$this->plugin->getServer()->broadcastMessage("command = " . $event->getCommand() . " by " . $event->getSender()->getName());
+		$this->plugin->getServer()->broadcastMessage("command = " . $event->getCommand() . " by " . $player->getDisplayName());
 
 
 
