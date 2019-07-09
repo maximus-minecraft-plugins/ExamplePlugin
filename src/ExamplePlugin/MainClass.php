@@ -18,6 +18,7 @@ class MainClass extends PluginBase{
 	public function onLoad() : void{
 		$this->getLogger()->info(TextFormat::WHITE . "I've been loaded!");
 
+
 		
 	}
 
@@ -36,6 +37,11 @@ class MainClass extends PluginBase{
 			case "example":
 				$sender->sendMessage("Hello " . $sender->getName() . "!");
 
+				return true;
+
+			case "house":
+				
+				$sender->sendMessage("Please wait we are building your house.");
 				return true;
 			default:
 				return false;

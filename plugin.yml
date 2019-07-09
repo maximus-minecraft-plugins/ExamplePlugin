@@ -13,7 +13,17 @@ commands:
   description: Example command
   usage: "/example"
   permission: exampleplugin.command.example
+
+  house:
+  description: Build house command command
+  usage: "/house"
+  permission: exampleplugin.command.house
+
+
 permissions:
  exampleplugin.command.example:
   description: "Allows the user to run the example command"
+  default: true
+ exampleplugin.command.house:
+  description: "Allows the user to run the house command"
   default: true

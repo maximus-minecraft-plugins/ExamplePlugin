@@ -37,6 +37,7 @@ use pocketmine\item\Item;
 use pocketmine\item\Arrow;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
+use pocketmine\event\server\CommandEvent;
 
 class ExampleListener implements Listener{
 
@@ -137,15 +138,29 @@ class ExampleListener implements Listener{
 			$explosion->explodeA();
 			$explosion->explodeB();
 		}
-		
-
-		
-		
-
-
-		
+	
 
 	}
+	
+
+
+	/**
+	 * @param CommandEvent $event
+	 *
+	 * @priority        NORMAL
+	 * @ignoreCancelled false
+	 */
+	public function onCommand(CommandEvent $event) : void{
+
+		
+		$this->plugin->getServer()->broadcastMessage("command = " . $event.getCommand());
+
+
+
+	}
+	
+
+
 	
 
 	
