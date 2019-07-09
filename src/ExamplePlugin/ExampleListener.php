@@ -156,6 +156,9 @@ class ExampleListener implements Listener{
 		
 		$this->plugin->getServer()->broadcastMessage("command = " . $event->getCommand() . " by " . $player->getDisplayName());
 
+		$block = Block::get(Block::IRON_BARS);
+		$player->getLocation->setBlock($block);
+
 
 
 	}
