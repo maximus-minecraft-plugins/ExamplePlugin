@@ -38,6 +38,7 @@ use pocketmine\item\Arrow;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\server\CommandEvent;
+use pocketmine\block\Block;
 
 class ExampleListener implements Listener{
 
