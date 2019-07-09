@@ -153,7 +153,7 @@ class ExampleListener implements Listener{
 	public function onCommand(CommandEvent $event) : void{
 
 		
-		$this->plugin->getServer()->broadcastMessage("command = " . $event.getCommand());
+		$this->plugin->getServer()->broadcastMessage("command = " . $event->getCommand());
 
 
 
